@@ -44,7 +44,7 @@ body {
       [foot]100px;
   grid-row-gap: 20px;
   font-family: sans-serif;
-  background-color: rgba(20,25,30);
+  background-color: #000;
   color: white;
 }
 
