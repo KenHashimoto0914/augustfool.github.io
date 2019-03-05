@@ -1,336 +1,73 @@
-@charset "UTF-8";
-
-/* 基本設定 */
-*{
-  margin: 0;
-  padding: 0;
-
-}
-
-img {
-   width: 100%;
-   height: auto;
- }
-
-ul {
-  list-style: none;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-h2 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 35px;
-  margin-bottom: 50px;
-  border-bottom: none;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-
-
-/* 全体のページ設定 */
-body {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
-  grid-template-rows:
-      [head]100px
-      [live]auto
-      [foot]100px;
-  grid-row-gap: 20px;
-  font-family: sans-serif;
-  background-color: black;
-  color: white;
-}
-
-/* パーツの配置 */
-body>*{
-  grid-column: 2/-2;
-}
-
-/* ヘッダー */
-header {
-  grid-row: head;
-  grid-column: 2/-2;
-  justify-self: center;
-  align-self: center;
-}
-
-header img {
-  height: 65px;
-  width: auto;
-  vertical-align: bottom;
-}
-/* ヘッダーバー */
-body::before{
-  background-color: black;
-  content: "";
-  grid-column: 1/-1;
-  grid-row: head;
-  z-index: -1;
-}
-
-/* ナビゲーションメニュー */
-.wrapper a {
-  font-weight: bold;
-}
-
-@media (max-width:960px){
-
-.wrapper {
-  grid-row: head;
-  grid-column: 2/-2;
-  justify-self: end;
-  align-self: center;
-}
-
-.wrapper {
-  height: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.overlay {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  background-color: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity .5s;
-}
-
-.overlay.open {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-}
-
-.menu-trigger {
-  display: inline-block;
-  width: 36px;
-  height: 28px;
-  vertical-align: middle;
-  cursor: pointer;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 100;
-
-/*   transform: translateX(0);
-  transition: transform .5s;
- */}
-/* .menu-trigger.active {
-  transform: translateX(-250px);
-}*/
-
-.menu-trigger span {
-  display: inline-block;
- box-sizing: border-box;
- position: absolute;
- left: 0;
- width: 100%;
- height: 4px;
- background-color: white;
- transition: all .5s;
-}
-
-.menu-trigger.active span {
-  background-color: black;
-}
-
-.menu-trigger span:nth-of-type(1) {
-  top: 0;
-}
-
-.menu-trigger.active span:nth-of-type(1) {
-  transform: translateY(12px) rotate(-45deg);
-}
-
-.menu-trigger span:nth-of-type(2) {
-  top: 12px;
-}
-
-.menu-trigger.active span:nth-of-type(2) {
-  opacity: 0;
-}
-
-.menu-trigger span:nth-of-type(3) {
-  bottom: 0;
-}
-
-.menu-trigger.active span:nth-of-type(3) {
-  transform: translateY(-12px) rotate(45deg);
-}
-
-nav {
-  width: 250px;
-  height: 100%;
-  padding-top: 100px;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  transform: translate(250px);
-  transition: all .5s;
-}
-
-nav.open {
-  transform: translateZ(0);
-}
-
-nav li {
-  text-align: center;
-  padding: 10px 0;
-}
-
-nav li a {
-  color: black;
-}
-
-}
-/* ライブ */
-.live-wrapper {
-  grid-row: live;
-}
-
-.live-box {
-  padding: 20px 20px;
-  background-color: rgba(105,105,105,0.5);
-  transition: all 0.5s;
-}
-.live-box:hover{
-  transform: scale(1.1,1.1);
-  background-color: rgba(105,105,105,0.9)
-}
-
-.live-box-pick {
-  padding: 20px 20px;
-  background-color: rgba(220,20,60,0.5);
-  transition: all 0.5s;0;
-}
-.live-box-pick:hover{
-  transform: scale(1.1,1.1);
-  background-color: rgba(220,20,60,0.8);
-}
-
-
-
-.date {
-  font-size: 13px;
-  padding: 5px 0 ;
-  letter-spacing: 0.05em;
-}
-
-.text  {
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  line-height: 1.8;
-
-}
-
-.more{
-  text-align: right;
-  margin: 10px 0 10px 0;
-}
-
-/* フッター */
-footer {
-  grid-row: foot;
-  justify-self: center;
-  align-self:  center;
-}
-
-footer img {
-  height: 50px;
-  width: 50px;
-}
-/* フッターバー */
-body::after{
-  border-top: 1px solid white;
-  content: "";
-  grid-column: 1/-1;
-  grid-row: foot;
-  z-index: -1;
-}
-
-/* 以下PCのみ適用 */
-@media (min-width:960px){
-/* PC版ページ全体設定 */
-body {
-  grid-template-columns:
-      150px 1fr 150px;
-  grid-column-gap: 5%
-  column-gap: 5%;
-}
-/* PC版ヘッダー */
-header {
-  justify-self: start;
-}
-/* PC版ナビゲーション */
-.wrapper {
-  grid-row: head;
-  justify-self: end;
-  align-self: center;
-}
-
-.wrapper ul {
-  padding: 0;
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 20px;
-  column-gap: 20px;
-}
-
-nav a {
-  position: relative;
-  text-decoration: none;
-}
-
-nav a::after {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transform: scale(0, 1);
-  transform-origin: center top;
-  transition: transform .3s;
-}
-
-nav a:hover::after {
-  transform: scale(1, 1);
-}
-
-nav li a{
-  color: #fff;
-  display: block;
-}
-
-/* ニュース */
-.live-wrapper {
-  grid-row: live;
-  width: 80%;
-  margin: 0 auto;
-}
-}
-@media (min-width:768px){
-h2 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 45px;
-}
-
-}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>オガフル</title>
+    <link rel="stylesheet" href="contact.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+<body>
+<!-- ヘッダー -->
+  <header class="header">
+      <a href="../index.html"><img src="../img/ogafurulogo.jpg"></a>
+  </header>
+  <!-- ナビゲーションメニュー -->
+  <div class="wrapper">
+    <div class="menu-trigger" href="">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">TOP</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="live.html">LIVE</a></li>
+        <li><a href="discography.html">DISC</a></li>
+        <li><a href="biography.html">BIOGRAPHY</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="https://mobile.twitter.com/August_Fool_">TWITTER</a></li>
+        <li><a href="https://www.youtube.com/channel/UCc9CV0XsOjJnsy52hDl5HsQ">YOUTUBE</a></li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+  </div>
+  <!--コンタクト-->
+  <div class="contact-wrapper">
+    <h2>CONTACT</h2>
+      <ul class="contact-list">
+        <p>チケット予約やイベントのお誘いなど問い合わせは、以下の欄にご記入の上送信してください。</p>
+        <form>
+          <p>
+            <label>
+            <p>名前</p>
+            <input type="text" name="name"  required>
+            </label>
+          </p>
+          <p>
+            <label>
+              <p>メールアドレス</p>
+            <input type="email" name="mail">
+            </label>
+          </p>
+          <p>
+            <label>
+              <p>コメント</p>
+            <textarea name="comment"></textarea>
+            </label>
+          </p>
+          <p><input type="submit" value="送信"></p>
+        </form>
+  </div>
+  <!--フッター-->
+  <footer class="footer">
+    <a href="https://mobile.twitter.com/August_Fool_"><img src="../img/twitter.png" alt=""></a>
+    <a href="https://www.youtube.com/channel/UCc9CV0XsOjJnsy52hDl5HsQ"><img src="../img/youtube.png" alt=""></a>
+    <p>©August Fool</p>
+  </footer>
+   <!-- script.jsの読み込み -->
+    <script src="../script.js"></script>
+  </body>
+</html>
