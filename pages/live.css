@@ -24,7 +24,16 @@ a {
 h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 35px;
+  margin-bottom: 50px;
+  border-bottom: none;
 }
+
+li {
+  margin-bottom: 10px;
+}
+
+
+
 /* 全体のページ設定 */
 body {
   display: grid;
@@ -190,30 +199,41 @@ nav li a {
 }
 
 }
-/* ニュース */
+/* ライブ */
 .live-wrapper {
   grid-row: live;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.live-wrapper h2 {
-  margin-bottom: 50px;
-  border-bottom: none;
 }
 
 .live-box {
-  margin: 30px 0;
+  padding: 20px 20px;
+  background-color: rgba(105,105,105,0.5);
+  transition: all 0.5s;0;
+}
+.live-box:hover{
+  transform: scale(1.1,1.1);
+  background-color: rgba(105,105,105,0.9)
 }
 
+.live-box-pick {
+  padding: 20px 20px;
+  background-color: rgba(220,20,60,0.5);
+  transition: all 0.5s;0;
+}
+.live-box-pick:hover{
+  transform: scale(1.1,1.1);
+  background-color: rgba(220,20,60,0.8);
+}
+
+
+
 .date {
-  font-weight: bold;
   font-size: 13px;
   padding: 5px 0 ;
   letter-spacing: 0.05em;
 }
 
 .text  {
+  font-weight: bold;
   font-size: 14px;
   letter-spacing: 0.1em;
   line-height: 1.8;
@@ -223,10 +243,6 @@ nav li a {
 .more{
   text-align: right;
   margin: 10px 0 10px 0;
-}
-
-.more  {
-  border-bottom: 0.5px solid white;
 }
 
 /* フッター */
@@ -307,7 +323,7 @@ nav li a{
 /* ニュース */
 .live-wrapper {
   grid-row: live;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 }
