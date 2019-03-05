@@ -23,7 +23,9 @@ a {
 
 h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 30px;
+  font-size: 35px;
+  margin-bottom: 50px;
+  border-bottom: none;
 }
 /* 全体のページ設定 */
 body {
@@ -196,12 +198,15 @@ nav li a {
   grid-row: title;
 }
 
-
 section {
   grid-row: bio;
   display: grid;
   grid-template-columns: 1fr ;
   grid-gap:30px;
+}
+
+article {
+  background-color: rgba(105,105,105,0.5);
 }
 
 .member img {
@@ -211,15 +216,15 @@ section {
   padding-right: 20px;
 }
 
-.twitter {
-
-}
-
-.twitter img {
+span{
   height: auto;
-  width: 10%;
+  width:10%;
+  float: right;
 }
 
+.text {
+  padding: 10px;
+}
 
 /* フッター */
 footer {
@@ -302,6 +307,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr ;
   grid-gap:30px;
+
 }
 
 section img {
@@ -316,5 +322,11 @@ h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 45px;
 }
+
+span{
+  height: auto;
+  width:30%;
+}
+
 
 }
