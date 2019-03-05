@@ -23,7 +23,9 @@ a {
 
 h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 30px;
+  font-size: 35px;
+  margin-bottom: 50px;
+  border-bottom: none;
 }
 /* 全体のページ設定 */
 body {
@@ -199,13 +201,6 @@ nav li a {
 .disc-wrapper {
   grid-row: disc;
   grid-column: 2/-2;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.disc-wrapper h2 {
-  margin-bottom: 50px;
-  border-bottom: none;
 }
 
 .disc-wrapper li {
@@ -214,15 +209,10 @@ nav li a {
 
 .text  {
   font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  line-height: 1.8;
 }
 
 .date {
-  font-weight: bold;
-  padding: 2px 2px ;
-  letter-spacing: 0.05em;
+  font-size: 11px;
 }
 
 .more{
@@ -325,7 +315,7 @@ nav li a{
 /* ディスコ*/
 .disc-wrapper {
   grid-row: disc;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 section {
