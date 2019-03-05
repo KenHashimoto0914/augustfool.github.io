@@ -22,16 +22,24 @@ a {
 }
 
 h2 {
-  border-bottom: 0.8px solid white;
+  grid-row: title;
   font-family: 'Permanent Marker', cursive;
-  font-size: 45px;
+  font-size: 35px;
+  margin-bottom: 50px;
+  border-bottom: none;
 }
+
+li {
+  margin-bottom: 10px;
+}
+
 /* 全体のページ設定 */
 body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
       [head]100px
+      [title]auto
       [contact]auto
       [foot]100px;
   grid-row-gap: 20px;
@@ -194,40 +202,35 @@ nav li a {
 /* コンタクト */
 .contact-wrapper {
   grid-row: contact;
-  width: 80%;
   margin: 0 auto;
 }
 
-.contact-wrapper h2 {
-  margin-bottom: 50px;
-  border-bottom: none;
-}
-
-.contact-wrapper li {
-  padding: 10px 0 10px 20px;
-}
-
-.text  {
+form p{
+  margin-bottom: 10px;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  line-height: 1.8;
 }
 
-.date {
-  font-weight: bold;
-  padding: 2px 2px ;
-  letter-spacing: 0.05em;
+input,textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
-.more{
-  text-align: right;
-  margin: 10px 0 30px 0;
+textarea {
+  height: 120px;
 }
 
-.more a {
-  border-bottom: 0.5px solid white;
+input[type="submit"]{
+  background-color: rgba(220,20,60,0.5);
+  border: none;
+  -webkit-appearance:none;
+  transition: all 0.2s;
 }
+
+input[type="submit"]:hover{
+  background-color: rgba(220,20,60,0.9);
+}
+
 
 /* フッター */
 footer {
@@ -304,10 +307,10 @@ nav li a{
   display: block;
 }
 
-/* コンタクト */
-.contact-wrapper {
+/* ニュース */
+.news-wrapper {
   grid-row: contact;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -318,5 +321,20 @@ h2 {
   font-size: 45px;
 }
 
+input[type="text"]{
+  width: 300px;
 }
+
+input[type="email"]{
+  width: 300px;
+}
+
+textarea {
+  width: 600px;
+}
+
+input[type="submit"]{
+  width: 200px;
+}
+
 }
