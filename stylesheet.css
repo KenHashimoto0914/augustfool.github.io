@@ -231,6 +231,11 @@ nav li a {
   grid-row: news;
 }
 
+.news-list {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .news-wrapper li {
   padding: 10px 0 10px 20px;
 }
