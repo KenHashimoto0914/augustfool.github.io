@@ -22,15 +22,24 @@ a {
 }
 
 h2 {
+  grid-row: title;
   font-family: 'Permanent Marker', cursive;
   font-size: 35px;
+  margin-bottom: 50px;
+  border-bottom: none;
 }
+
+li {
+  margin-bottom: 10px;
+}
+
 /* 全体のページ設定 */
 body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
       [head]100px
+      [title]auto
       [news]auto
       [foot]100px;
   grid-row-gap: 20px;
@@ -193,36 +202,30 @@ nav li a {
 /* ニュース */
 .news-wrapper {
   grid-row: news;
-  width: 80%;
-  margin: 0 auto;
 }
-
-.news-wrapper h2 {
-  margin-bottom: 50px;
-  border-bottom: none;
-}
-
-
 
 .news-box {
-  margin: 30px 0;
+  padding: 20px 20px;
+  background-color: rgba(105,105,105,0.5);
+  transition: all 0.5s;
+}
+
+.news-box:hover{
+  transform: scale(1.1,1.1);
+  background-color: rgba(105,105,105,0.9)
 }
 
 .text  {
+  font-weight: bold;
   font-size: 14px;
   letter-spacing: 0.1em;
   line-height: 1.8;
 }
 
 .date {
-  font-weight: bold;
   font-size: 13px;
   padding: 5px 0 ;
   letter-spacing: 0.05em;
-}
-
-.more  {
-  border-bottom: 0.5px solid white;
 }
 
 /* フッター */
@@ -303,7 +306,7 @@ nav li a{
 /* ニュース */
 .news-wrapper {
   grid-row: news;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
