@@ -44,7 +44,7 @@ body {
       [foot]100px;
   grid-row-gap: 20px;
   font-family: sans-serif;
-  background-color: black;
+  background-color: rgba(20,25,30);
   color: white;
 }
 
@@ -250,6 +250,7 @@ body::after{
   grid-column: 1/-1;
   grid-row: foot;
   z-index: -1;
+  background-color: black;
 }
 
 /* 以下PCのみ適用 */
